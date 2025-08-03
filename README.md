@@ -1,6 +1,6 @@
 # 🤖 AI Financial Analyst
 
-This project is an AI-powered financial analyst built with Python and LangGraph. The agent connects to real-world financial services to answer questions about stock market data and business revenue.
+This project is an AI-powered financial analyst built with Python and LangGraph. The agent connects to real-world financial services to answer questions about stock market data and business revenue. 
 
 ## ✨ Features
 
