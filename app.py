@@ -7,27 +7,20 @@ from financial_agent import agent_executor
 # --- Streamlit Page Configuration ---
 st.set_page_config(page_title="MCP Financial Analyst", layout="wide")
 
-st.title("🤖 AI Financial Analyst (MCP Demo)")
-st.caption("Powered by LangGraph, Zerodha, and Stripe MCP Servers")
+st.title("🤖 AI Financial Analyst")
+st.caption("Powered by LangGraph, Alpha Vantage, and Stripe")
 
 # --- Instructions Expander ---
 with st.expander("ℹ️ How to use this demo"):
     st.write("""
-        This application demonstrates an AI agent that connects to multiple real-world services via the Model Context Protocol (MCP).
-
-        **Before you start:**
-        1.  Make sure you have the local **Stripe MCP server running** in a separate terminal.
-            - Command: `npx -y @stripe/mcp --tools=all`
-        2.  The **Zerodha Kite MCP server** is hosted by Zerodha, so no local setup is needed for it.
+        This application demonstrates an AI agent that connects to multiple real-world services.
 
         **Example Queries:**
-        - `What is the current price of NIFTY 50?` (Uses Zerodha)
+        - `What is the stock price of Apple?` (Uses Alpha Vantage)
         - `Show me my last 3 charges on Stripe.` (Uses Stripe)
-        - `What is the last traded price for NSE:RELIANCE, and also list my last charge on Stripe?` (Uses both)
     """)
 
 # --- Session State Initialization ---
-# This makes sure our chat history is saved even when the app reruns.
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
@@ -45,22 +38,17 @@ if prompt := st.chat_input("Ask a financial question..."):
 
     # Get agent response
     with st.chat_message("assistant"):
-        message_placeholder = st.empty()
-        full_response = ""
-
-        # The input to the agent is a list of messages
-        inputs = {"messages": [("user", prompt)]}
-
-        # We stream the response for a "live typing" effect
-        for chunk in agent_executor.stream(inputs):
-            # The output of create_react_agent is a dictionary with the key "messages"
-            # The value is a list of messages. We take the last one.
-            last_message = chunk.get("messages", [])[-1]
-            if hasattr(last_message, 'content'):
-                full_response += last_message.content
-                message_placeholder.markdown(full_response + "▌")
-
-        message_placeholder.markdown(full_response)
-
+        # Use a spinner to let the user know something is happening
+        with st.spinner("Thinking..."):
+            # The input to the agent is a list of messages
+            inputs = {"messages": [("user", prompt)]}
+            
+            # Invoke the agent directly to get the final response
+            response = agent_executor.invoke(inputs)
+            
+            # The final answer is in the 'content' of the last message
+            final_answer = response['messages'][-1].content
+            st.markdown(final_answer)
+    
     # Add agent response to chat history
-    st.session_state.messages.append({"role": "assistant", "content": full_response})
+    st.session_state.messages.append({"role": "assistant", "content": final_answer})
