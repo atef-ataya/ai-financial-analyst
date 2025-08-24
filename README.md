@@ -7,9 +7,10 @@ This is **Pillar 1: Standardization**, where we master the Model Context Protoco
 ## 🏗️ The Architect's Playbook Series
 
 **Five Pillars of Modern AI Architecture:**
+
 - **Pillar 1: Standardization (MCP)** ← You are here
 - Pillar 2: Autonomy (Computer Vision Agents)
-- Pillar 3: Collaboration (Multi-Agent Systems)  
+- Pillar 3: Collaboration (Multi-Agent Systems)
 - Pillar 4: Reliability (Production Monitoring)
 - Pillar 5: Framework Maturity (Professional SDKs)
 
@@ -34,6 +35,7 @@ This project showcases MCP - the "Wi-Fi for AI" - a universal standard for AI-to
 - **Production-Ready:** Intelligent error handling and fallback systems
 
 **MCP Servers Demonstrated:**
+
 - **Market Data:** Professional stock market integration with fallback
 - **Stripe Payments:** Local MCP server for payment analytics
 - **System Diagnostics:** Real-time MCP health monitoring
@@ -49,6 +51,7 @@ This project showcases MCP - the "Wi-Fi for AI" - a universal standard for AI-to
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Python 3.9+
 - Node.js 16+ (for Stripe MCP server)
 - [OpenAI API key](https://platform.openai.com/api-keys)
@@ -76,6 +79,7 @@ streamlit run app.py
 ```
 
 **Optional:** For live Stripe data, start the MCP server:
+
 ```bash
 ./setup_stripe_mcp.sh
 ```
@@ -85,7 +89,7 @@ streamlit run app.py
 By building this project, you'll master:
 
 1. **MCP Protocol Fundamentals:** JSON-RPC 2.0 implementation patterns
-2. **Production Error Handling:** Graceful fallbacks and recovery systems  
+2. **Production Error Handling:** Graceful fallbacks and recovery systems
 3. **AI Agent Orchestration:** Using LangGraph for complex workflows
 4. **Real-time Monitoring:** Building observability into AI systems
 5. **Professional UI Design:** Creating production-grade interfaces
@@ -93,14 +97,17 @@ By building this project, you'll master:
 ## 📊 Try These Queries
 
 **Market Data:**
+
 - "What's the current NIFTY 50 price and performance?"
 - "Show me RELIANCE and TCS stock analysis"
 
 **Portfolio Analysis:**
+
 - "Analyze portfolio: 10 RELIANCE, 5 TCS, 20 HDFC, 15 INFY"
 - "Calculate portfolio risk and diversification score"
 
 **System Diagnostics:**
+
 - "Check MCP system status and server health"
 - "Show connection pool metrics and performance"
 
@@ -109,17 +116,19 @@ By building this project, you'll master:
 If you encounter MCP connection issues, see the detailed [MCP Troubleshooting Guide](MCP_TROUBLESHOOTING.md).
 
 Common issues:
+
 - **MCP Authentication Errors:** Expected behavior - demonstrates professional fallback
 - **Connection Timeouts:** System gracefully handles and provides demo data
 - **Import Errors:** Ensure Python 3.9+ and all dependencies installed
 
 ## 🎬 Video Tutorial
 
-Watch the complete tutorial: [The Architect's Playbook - Pillar 1](YOUR_YOUTUBE_LINK)
+Watch the complete tutorial: [The Architect's Playbook - Pillar 1](https://www.youtube.com/watch?v=AjONROx1TEk&list=PLQog6EfhK_pKFvllqef3aOHIigI4vwZpU)
 
 ## 🏗️ Architecture Highlights
 
 **Production Patterns Demonstrated:**
+
 - JSON-RPC 2.0 protocol implementation
 - Intelligent error handling and recovery
 - Real-time system monitoring and observability
@@ -135,6 +144,7 @@ Subscribe to the channel for the complete Architect's Playbook series!
 ## 🤝 Contributing
 
 This is an educational project demonstrating production AI architecture patterns. Feel free to:
+
 - Fork and experiment with different MCP servers
 - Extend the monitoring and analytics features
 - Add new financial data sources
