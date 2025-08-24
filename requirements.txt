@@ -1,7 +1,21 @@
-langchain
-langgraph
-langchain-openai
-python-dotenv
-streamlit
-requests
-stripe
+# The Architect's Playbook - Pillar 1: MCP Financial Analyst
+# Core dependencies for production MCP implementation
+
+# Core AI & Agent Framework
+langchain>=0.1.0
+langgraph>=0.1.0
+langchain-openai>=0.1.0
+
+# Web Framework & UI
+streamlit>=1.31.0
+plotly>=5.17.0
+pandas>=2.0.0
+
+# HTTP & API Communication
+requests>=2.31.0
+
+# Environment & Configuration
+python-dotenv>=1.0.0
+
+# Optional: For live Stripe MCP server
+stripe>=7.0.0
